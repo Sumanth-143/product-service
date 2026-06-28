@@ -42,7 +42,6 @@ public class ProductService {
 
     public Page<Product> getProductsByPage(int page, int size, String sortBy) {
         int maxSize = Math.min(size, 20);
-
         // Create the Pageable configuration instance
         Pageable pageable = PageRequest.of(page, maxSize, Sort.by(sortBy).ascending());
         return productRepo.findAll(pageable);
