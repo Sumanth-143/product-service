@@ -28,7 +28,6 @@ public class ProductController {
             Product product=productService.getProductBtId(id).
                     orElseThrow(()->new ProductNotFoundException("Product Not Found"));
             return ResponseEntity.ok().body(product);
-
     }
 
     @PostMapping("/addProduct")
@@ -53,7 +52,5 @@ public class ProductController {
         Page<Product> productPage = productService.getProductsByPage(page, size, sortBy);
         return ResponseEntity.ok(productPage);
     }
-
-
 
 }
